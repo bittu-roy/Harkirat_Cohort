@@ -3,7 +3,7 @@ Vercel company created Next.js
 
 OpenAPI Spec created by a company Swagger.
 
-https://tsoa-community.github.io/docs/getting-started.html
+Getting Started with OpenApI Spec- "https://tsoa-community.github.io/docs/getting-started.html"
 
 Why OpenApI Specification came into place?
 Earlier people used to write backend code using the same technique and then people realized that... their app can used multiple ways. 
