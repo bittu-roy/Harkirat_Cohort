@@ -1,0 +1,35 @@
+dub.sh-> let's us do URL shortening
+Vercel company created Next.js
+
+OpenAPI Spec created by a company Swagger.
+
+https://tsoa-community.github.io/docs/getting-started.html
+
+Why OpenApI Specification came into place?
+Earlier people used to write backend code using the same technique and then people realized that... their app can used multiple ways. 
+For example, Zerodhha can be used from pc, mobile phone, create trading bots with APIs that they provide that directly hits the APIs without using a client like a mobile device or a pc. 
+Directly make HTTP calls from backend server execute trade. 
+Now it has became a very popular use case and the problem is it is very hard to document a backend endpoints as time goes by the backend endpoints keeps on increasing and throughput the lifetime of the application we keep changing the inputs, methods, routes from our application.
+so there needs to be a way to automatically generate documentation and some code so that if a change is made in the backend server, then it can propagate in the website, mobile apps.
+So to solve this OpenApI Spec, GraphQL comes into play and they are a standedized way for frontend to communicate with backends.
+
+END GOALS:-
+1. Create a ChatGPT plugin
+2. Create Clients
+3. Zerodha Bug
+
+Health Check Endpoint- it tells monitoring service whether the service is up or not (server running or not)
+
+Then we learned classes in TypeScript.
+Decorators in Typescript- Decorators are special kind of declaration which are attached to method, property and they are denoted by using '@'. Like '@once' is used to run a function only once even it is being called multiple times. Then there is '@measure' which measures the time taken by a prticular function to execute.
+
+OpenAPI can only interact with backend servers and not frontend.
+
+"Pick" in typescript helps in picking keys from another interface. Example:-  Pick<Todo, "title" | "description">
+
+Swagger-UI- Express- Given an OpenAPI file it lets us create swagger ui. It includes get, post methods and basically acts an alternative to postman. And helps in automatic client generation. 
+
+npx openapi-typescript-codegen -i ./build/swagger.json -o node-client -c fetch- This command helps us to create a node.js client given swagger.json as input file. -i-> input (./build/swagger.json) and -o->output (node-client) folder and (fetch) as the fetching library under the hood we could also use axios instead of fetch.
+
+yarn run tsoa spec- command used to generate swagger.json automatic generated (openApI File).
+yarn run tsoa routes- command used to generate routes automatically.
