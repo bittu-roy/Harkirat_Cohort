@@ -1,0 +1,47 @@
+Intoduction to Next.js-> Next.js is a framework written on top of React.js
+
+Why was NExt.js introduced?
+Next.js was introduced because minor of some inconviniences in React .
+1. In react project, we had to maintain a seperate folder for Backend project for our API routes. 
+   Next.js is a fullstack application and we don't need a seperate express application for it.
+2. React doesnot provide out of the box routing ("react-router-dom")
+3. React is not SEO optimized. (main problem) SEO(Search Engine Optimization)-> Google didn't rank sites because react was structured in a certain way.
+
+How does Google rank websites?
+When we search for something in Google, how does it returns top 10 sites for our search? It uses CRAWLERS- Crawlers hits multiple websites and try to figure out what is this website doing and then ranking them based on relevance.
+Crawlers basically hits the website , get back the HTML (study the HTML) and then figure out what the website if for e.x.- a course selling website.
+
+So even if we make a React based website where clearly it is mentioned that it is a course selling website, what happens that the contents of the website is not present in the initial HTML file and thus it creates problems for the crawlers to figure it out what the website is used for.. The way React is written unfortunately we don't get back the contents immedaitely and that's why React is not SEO optimized and this is the major problem which React tried to fix.
+
+4. Waterfalling Problem- When we hit a blog page what heppens is that:-
+        
+       1. Firstly a request call for index.html is made
+       2. Then as a reference is there for JS file, a second request is made for JS file
+       3. After this the JS actually runs , check if the users are logged in or not ( if not logged in redirect them back to the signup page)
+       4. If logged in then fetch and display the actual blogs.
+
+4 things happening one after the other and this is known as waterfalling model and one request is dependent on the other and the request happens stepwise.
+
+What Next.js does is in the initial request (single request) i.e. the index.html file it gets all the blogs.
+and so it solves the waterfalling problem and becomes SER optimized.
+
+Downside:- Deployment of Next.js application is very hard and expensive as well.
+
+Next.js uses file based routing. Where we crate a file and define what to render in the browser in the files present in it.
+
+Server Side Rendering- Created server on the HTML itself
+
+Layout.tsx-> Layouts let you wrap all child pages inside some logic. Basically if we write something in "layout.tsx" , it will be written on each and every page/routes which we have described in our code and thus creating a layout for all the pages that exists in our application.
+
+As Next.js uses file based routing and so if we want a common layout for multiple routes, then we should make a root folder inside it put the children folder and define the layout.tsx. Now for that our URL becomes a bit long e.x.-> "localhost://3000/auth/signin" , If we want to remove auth we have just rename the auth folder as (auth).
+
+Client and server components
+NextJS expects you to identify all your components as either client or server
+As the name suggests
+1.Server components are rendered on the server
+2.Client components are pushed to the client to be rendered
+3.By default, all components are server components. If they are not server components then there will be no SEO optimization.
+
+Soo when we initialise the onClick function what happens is that there is nothing to click on the server side so Next.js give us a error that the onClick function should be written on the client side to be rendered. Also in case of useState, useEffect it is treated as client side component.
+
+Basically we should the defer the client side component as much as possible so that we can get all the SEO properties.
